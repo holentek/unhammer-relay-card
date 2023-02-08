@@ -1,74 +1,84 @@
+int state0 = 0;
+int state1 = 0;
+int state2 = 0;
+int state3 = 0;
+int state4 = 0;
+int state5 = 0;
+int state6 = 0;
+int state7 = 0;
 void setup() {
-  // Set each pin as an input or an output
-  pinMode(0, INPUT);
-  pinMode(1, INPUT);
-  pinMode(2, INPUT);
-  pinMode(3, INPUT);
-  pinMode(4, INPUT);
-  pinMode(5, INPUT);
-  pinMode(6, INPUT);
-  pinMode(7, INPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(13, OUTPUT);
-  pinMode(14, OUTPUT);
-  pinMode(15, OUTPUT);
-  
+// Set each pin as an input or an output
+pinMode(2, INPUT_PULLUP);
+pinMode(3, INPUT_PULLUP);
+pinMode(4, INPUT_PULLUP);
+pinMode(5, INPUT_PULLUP);
+pinMode(6, INPUT_PULLUP);
+pinMode(A0, OUTPUT);
+pinMode(A1, OUTPUT);
+pinMode(A2, OUTPUT);
+pinMode(A3, OUTPUT);
+pinMode(A4, OUTPUT);
 }
-
+ 
 void loop() {
-  // Read the input
-  int input0 = digitalRead(0);
-  int input1 = digitalRead(1);
-  int input2 = digitalRead(2);
-  int input3 = digitalRead(3);
-  int input4 = digitalRead(4);
-  int input5 = digitalRead(5);
-  int input6 = digitalRead(6);
-  int input7 = digitalRead(7);
-  
-  // Write the output
-  if (input0 == HIGH) {
-    digitalWrite(8, HIGH);
-  } else if (input1 == HIGH) {
-    digitalWrite(8, LOW);
-  }
-  if (input2 == HIGH) {
-    digitalWrite(9, HIGH);
-  } else if (input3 == HIGH) {
-    digitalWrite(9, LOW);
-  }
-  if (input4 == HIGH) {
-    digitalWrite(10, HIGH);
-  } else if (input5 == HIGH) {
-    digitalWrite(10, LOW);
-  }
-  if (input6 == HIGH) {
-    digitalWrite(11, HIGH);
-  } else if (input7 == HIGH) {
-    digitalWrite(11, LOW);
-  }
-  if (input0 == HIGH) {
-    digitalWrite(12, HIGH);
-  } else if (input1 == HIGH) {
-    digitalWrite(12, LOW);
-  }
-  if (input2 == HIGH) {
-    digitalWrite(13, HIGH);
-  } else if (input3 == HIGH) {
-    digitalWrite(13, LOW);
-  }
-  if (input4 == HIGH) {
-    digitalWrite(14, HIGH);
-  } else if (input5 == HIGH) {
-    digitalWrite(14, LOW);
-  }
-  if (input6 == HIGH) {
-    digitalWrite(15, HIGH);
-  } else if (input7 == HIGH) {
-    digitalWrite(15, LOW);
-  }
+// Read the input
+int input0 = digitalRead(2);
+int input1 = digitalRead(3);
+int input2 = digitalRead(4);
+int input3 = digitalRead(5);
+int input4 = digitalRead(6);
+// Write the output
+ 
+if (input0 == 0) {
+if (state0 == 0){
+analogWrite(A0, 255);
+state0 = 1;
+} else if (state0 == 1){
+analogWrite(A0, 0);
+state0 = 0;
+}
+}
+ 
+if (input1 == 0) {
+if (state1 == 0){
+analogWrite(A1, 255);
+state1 = 1;
+} else if (state1 == 1){
+analogWrite(A1, 0);
+state1 = 0;
+}
+}
+ 
+if (input2 == 0) {
+if (state2 == 0){
+analogWrite(A2, 255);
+state2 = 1;
+} else if (state2 == 1){
+analogWrite(A2, 0);
+state2 = 0;
+}
+}
+ 
+if (input3 == 0) {
+if (state3 == 0){
+analogWrite(A3, 255);
+state3 = 1;
+} else if (state3 == 1){
+analogWrite(A3, 0);
+state3 = 0;
+}
+}
+ 
+if (input4 == 0) {
+if (state4 == 0){
+analogWrite(A4, 255);
+state4 = 1;
+} else if (state4 == 1){
+analogWrite(A4, 0);
+state4 = 0;
+}
+}
+ 
+delay(300);
+ 
 }
